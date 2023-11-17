@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" onClick={logoClick({name: 'Test Logo', currency: 'USD', value: 7.8, items:[{item_id:'1234214', item_name: 'test logo name'}]})}/> */}
-        <img src={logo} className="App-logo" alt="logo"/>
+        <img src={logo} className="App-logo" alt="logo" onClick={(event) => handleClick(event, 'hello')}/>
         <p onClick={(event) => handleClick(event, 'hello')} >
           Sample site to test GA4 (logo click)
         </p>
