@@ -6,10 +6,14 @@ function App() {
   ReactGA.initialize('G-DYCJHNTKGJ');
 
   ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search, title: "Home Page" });
+
+  const logoClick = (value) =>{
+    ReactGA.event("add_payment_info",value);
+  }
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo" onClick={()=>logoClick({name: 'Test Logo'})}/>
         <p>
           Sample site to test GA4
         </p>
