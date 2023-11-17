@@ -9,13 +9,21 @@ function App() {
 
   const logoClick = (value) =>{
     console.log('logo click');
-    alert('clicked');
     ReactGA.event("add_payment_info",value);
   }
+
+  const handleClick = event => {
+    // 👇️ refers to the image element
+    console.log(event.target);
+
+    console.log('Image clicked');
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" onClick={logoClick({name: 'Test Logo', currency: 'USD', value: 7.8, items:[{item_id:'1234214', item_name: 'test logo name'}]})}/>
+        {/* <img src={logo} className="App-logo" alt="logo" onClick={logoClick({name: 'Test Logo', currency: 'USD', value: 7.8, items:[{item_id:'1234214', item_name: 'test logo name'}]})}/> */}
+        <img src={logo} className="App-logo" alt="logo" onClick={handleClick}/>
         <p>
           Sample site to test GA4 (logo click)
         </p>
