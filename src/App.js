@@ -8,6 +8,7 @@ function App() {
   ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search, title: "Home Page" });
 
   const logoClick = (value) =>{
+    console.log('logo click')
     ReactGA.event("add_payment_info",value);
   }
   return (
