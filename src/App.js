@@ -7,14 +7,15 @@ function App() {
 
   ReactGA.send({ hitType: "pageview", page: window.location.pathname + window.location.search, title: "Home Page" });
 
-  const logoClick = (value) =>{
-    console.log('logo click');
-    ReactGA.event("add_payment_info",value);
-  }
+  // const logoClick = (value) =>{
+  //   ReactGA.event("add_payment_info",value);
+  // }
 
-  const handleClick = event => {
+  const handleClick = (event, message) => {
     // 👇️ refers to the image element
     console.log(event.target);
+
+    console.log(message);
 
     console.log('Image clicked');
   };
@@ -24,7 +25,7 @@ function App() {
       <header className="App-header">
         {/* <img src={logo} className="App-logo" alt="logo" onClick={logoClick({name: 'Test Logo', currency: 'USD', value: 7.8, items:[{item_id:'1234214', item_name: 'test logo name'}]})}/> */}
         <img src={logo} className="App-logo" alt="logo"/>
-        <p onClick={handleClick} >
+        <p onClick={(event) => handleClick(event, 'hello')} >
           Sample site to test GA4 (logo click)
         </p>
         <a
